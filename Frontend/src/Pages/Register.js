@@ -92,12 +92,15 @@ const Register = () => {
         </p>
       </form>
 
-      <footer>
+      {/* <footer>
   <p>
     <span>Terms of Service</span> and{" "}
     <span>Privacy Policy</span>
   </p>
-</footer>
+</footer> */}
+      <footer>
+        <p>Terms of Service and Privacy Policy</p>
+      </footer>
     </div>
   );
 };
