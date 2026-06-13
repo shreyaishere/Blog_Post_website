@@ -19,7 +19,8 @@ function CreatePost() {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.post("http://localhost:5000/api/posts", form, {
+      // await axios.post("http://localhost:5000/api/posts", form, {
+      await axios.post("https://blog-post-website-j5f0.onrender.com/api/posts", form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("Post Created!");

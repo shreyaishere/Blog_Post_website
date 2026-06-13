@@ -12,7 +12,8 @@ const ManagePosts = () => {
     const fetchPosts = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:5000/api/posts/myposts", {
+        // const res = await axios.get("http://localhost:5000/api/posts/myposts", {
+        const res = await axios.get("https://blog-post-website-j5f0.onrender.com/api/posts/myposts", {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log(res.data)

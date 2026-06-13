@@ -13,7 +13,8 @@ export default function Home({ searchTerm }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/posts", {
+      // .get("http://localhost:5000/api/posts", {
+      .get("https://blog-post-website-j5f0.onrender.com/api/posts", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

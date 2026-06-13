@@ -19,7 +19,8 @@ const Register = () => {
     e.preventDefault();
     try {
       const payload = { ...form, age: Number(form.age) };
-      await axios.post("http://localhost:5000/api/users/Register", payload, {
+      // await axios.post("http://localhost:5000/api/users/Register", payload, {
+      await axios.post("https://blog-post-website-j5f0.onrender.com/api/users/Register", payload, {
         withCredentials: true,
       });
 

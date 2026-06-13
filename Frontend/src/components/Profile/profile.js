@@ -13,7 +13,8 @@ const Profile = () => {
         const token = localStorage.getItem('token');
         
         // Fetch user profile
-        const userRes = await axios.get('http://localhost:5000/api/users/:id', {
+        // const userRes = await axios.get('http://localhost:5000/api/users/:id', {
+        const userRes = await axios.get('https://blog-post-website-j5f0.onrender.com/api/users/:id', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(userRes.data);

@@ -38,7 +38,8 @@ const PostDetails = () => {
     const fetchPost = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(`http://localhost:5000/api/posts/${id}`, {
+        // const res = await axios.get(`http://localhost:5000/api/posts/${id}`, {
+        const res = await axios.get(`https://blog-post-website-j5f0.onrender.com/api/posts/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

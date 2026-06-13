@@ -16,7 +16,8 @@ const Dashboard = () => {
       const token = localStorage.getItem("token");
       if (!token) return alert("User not authenticated");
 
-      const res = await axios.get("http://localhost:5000/api/posts/myposts", {
+      // const res = await axios.get("http://localhost:5000/api/posts/myposts", {
+      const res = await axios.get("https://blog-post-website-j5f0.onrender.com/api/posts/myposts", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setPosts(res.data);
