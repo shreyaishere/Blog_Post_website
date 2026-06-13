@@ -33,19 +33,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// mongoose
-//   .connect(MONGODB_URI)
-//   .then(() => {
-//     console.log("Connected to MongoDB");
-//   })
-//   .catch((err) => {
-//     console.error("Error connecting to MongoDB:", err);
-//   });
-
 mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(err => console.error(err)); 
+  .connect(MONGODB_URI)
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err);
+  });
+
+// mongoose
+//   .connect(process.env.MONGODB_URI)
+//   .then(() => console.log("Connected to MongoDB"))
+//   .catch(err => console.error(err)); 
 
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
