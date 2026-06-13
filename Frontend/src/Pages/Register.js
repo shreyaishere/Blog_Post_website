@@ -20,9 +20,13 @@ const Register = () => {
     try {
       const payload = { ...form, age: Number(form.age) };
       // await axios.post("http://localhost:5000/api/users/Register", payload, {
-      await axios.post("https://blog-post-website-j5f0.onrender.com/api/users/Register", payload, {
-        withCredentials: true,
-      });
+      await axios.post(
+        "https://blog-post-website-j5f0.onrender.com/api/users/Register",
+        payload,
+        {
+          withCredentials: true,
+        },
+      );
 
       alert("Registration successful");
       navigate("/Login");
@@ -90,8 +94,9 @@ const Register = () => {
 
       <footer>
         <p>
-          <a href="#">Terms of Service</a> and{" "}
-          <a href="#">Privacy Policy</a>
+          {/* <a href="#">Terms of Service</a> and{" "}
+          <a href="#">Privacy Policy</a> */}
+          <span>Terms of Service</span> and <span>Privacy Policy</span>
         </p>
       </footer>
     </div>
