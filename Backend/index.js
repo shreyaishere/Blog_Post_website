@@ -9,7 +9,9 @@ const postRoutes = require("./Routes/postRoutes");
 
 const app = express();
 const PORT = 5000;
-const MONGODB_URI = "mongodb://localhost:27017/Users";
+// const MONGODB_URI = "mongodb://localhost:27017/Users";
+
+const MONGODB_URI = process.env.MONGODB_URI;
 
 app.use(
   cors({
@@ -31,14 +33,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+// mongoose
+//   .connect(MONGODB_URI)
+//   .then(() => {
+//     console.log("Connected to MongoDB");
+//   })
+//   .catch((err) => {
+//     console.error("Error connecting to MongoDB:", err);
+//   });
+
 mongoose
-  .connect(MONGODB_URI)
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB:", err);
-  });
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch(err => console.error(err)); 
 
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
