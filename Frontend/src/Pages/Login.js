@@ -76,8 +76,10 @@ const Login = ({ setIsLoggedIn }) => {
           <a href="#">Terms of Service</a> and{" "}
           <a href="#">Privacy Policy</a>
         </p> */}
-        <span>Terms of Service</span> and{" "}
-        <span>Privacy Policy</span>
+        <p>
+    <span>Terms of Service</span> and{" "}
+    <span>Privacy Policy</span>
+  </p>
       </footer>
     </div>
   );
